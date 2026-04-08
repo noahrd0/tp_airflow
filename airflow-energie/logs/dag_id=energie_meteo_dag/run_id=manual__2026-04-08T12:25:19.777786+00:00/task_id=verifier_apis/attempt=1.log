@@ -1,0 +1,16 @@
+[2026-04-08T12:25:22.778+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: energie_meteo_dag.verifier_apis manual__2026-04-08T12:25:19.777786+00:00 [queued]>
+[2026-04-08T12:25:22.786+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: energie_meteo_dag.verifier_apis manual__2026-04-08T12:25:19.777786+00:00 [queued]>
+[2026-04-08T12:25:22.786+0000] {taskinstance.py:2171} INFO - Starting attempt 1 of 3
+[2026-04-08T12:25:22.797+0000] {taskinstance.py:2192} INFO - Executing <Task(PythonOperator): verifier_apis> on 2026-04-08 12:25:19.777786+00:00
+[2026-04-08T12:25:22.804+0000] {standard_task_runner.py:60} INFO - Started process 85 to run task
+[2026-04-08T12:25:22.808+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'energie_meteo_dag', 'verifier_apis', 'manual__2026-04-08T12:25:19.777786+00:00', '--job-id', '53', '--raw', '--subdir', 'DAGS_FOLDER/energie_meteo.py', '--cfg-path', '/tmp/tmplebozlmd']
+[2026-04-08T12:25:22.810+0000] {standard_task_runner.py:88} INFO - Job 53: Subtask verifier_apis
+[2026-04-08T12:25:22.857+0000] {task_command.py:423} INFO - Running <TaskInstance: energie_meteo_dag.verifier_apis manual__2026-04-08T12:25:19.777786+00:00 [running]> on host 1ac10858d911
+[2026-04-08T12:25:22.951+0000] {taskinstance.py:2481} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='rte-data-team' AIRFLOW_CTX_DAG_ID='energie_meteo_dag' AIRFLOW_CTX_TASK_ID='verifier_apis' AIRFLOW_CTX_EXECUTION_DATE='2026-04-08T12:25:19.777786+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-04-08T12:25:19.777786+00:00'
+[2026-04-08T12:25:23.177+0000] {energie_meteo.py:55} INFO - API Open-Meteo est disponible.
+[2026-04-08T12:25:23.538+0000] {energie_meteo.py:55} INFO - API éCO2mix est disponible.
+[2026-04-08T12:25:23.539+0000] {energie_meteo.py:61} INFO - Toutes les APIs sont disponibles. Pipeline autorisé à continuer.
+[2026-04-08T12:25:23.541+0000] {python.py:201} INFO - Done. Returned value was: None
+[2026-04-08T12:25:23.557+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=energie_meteo_dag, task_id=verifier_apis, execution_date=20260408T122519, start_date=20260408T122522, end_date=20260408T122523
+[2026-04-08T12:25:23.622+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-04-08T12:25:23.767+0000] {taskinstance.py:3281} INFO - 2 downstream tasks scheduled from follow-on schedule check

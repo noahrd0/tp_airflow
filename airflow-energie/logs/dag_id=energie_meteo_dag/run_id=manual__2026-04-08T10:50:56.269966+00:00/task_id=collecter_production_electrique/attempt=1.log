@@ -1,0 +1,24 @@
+[2026-04-08T10:50:59.573+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: energie_meteo_dag.collecter_production_electrique manual__2026-04-08T10:50:56.269966+00:00 [queued]>
+[2026-04-08T10:50:59.582+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: energie_meteo_dag.collecter_production_electrique manual__2026-04-08T10:50:56.269966+00:00 [queued]>
+[2026-04-08T10:50:59.582+0000] {taskinstance.py:2171} INFO - Starting attempt 1 of 3
+[2026-04-08T10:50:59.623+0000] {taskinstance.py:2192} INFO - Executing <Task(PythonOperator): collecter_production_electrique> on 2026-04-08 10:50:56.269966+00:00
+[2026-04-08T10:50:59.633+0000] {standard_task_runner.py:60} INFO - Started process 333 to run task
+[2026-04-08T10:50:59.635+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'energie_meteo_dag', 'collecter_production_electrique', 'manual__2026-04-08T10:50:56.269966+00:00', '--job-id', '24', '--raw', '--subdir', 'DAGS_FOLDER/energie_meteo.py', '--cfg-path', '/tmp/tmp73p6w0ml']
+[2026-04-08T10:50:59.637+0000] {standard_task_runner.py:88} INFO - Job 24: Subtask collecter_production_electrique
+[2026-04-08T10:50:59.683+0000] {task_command.py:423} INFO - Running <TaskInstance: energie_meteo_dag.collecter_production_electrique manual__2026-04-08T10:50:56.269966+00:00 [running]> on host 2b261882dd28
+[2026-04-08T10:50:59.745+0000] {taskinstance.py:2481} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='rte-data-team' AIRFLOW_CTX_DAG_ID='energie_meteo_dag' AIRFLOW_CTX_TASK_ID='collecter_production_electrique' AIRFLOW_CTX_EXECUTION_DATE='2026-04-08T10:50:56.269966+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-04-08T10:50:56.269966+00:00'
+[2026-04-08T10:50:59.969+0000] {taskinstance.py:2699} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/energie_meteo.py", line 129, in collecter_production_electrique
+    for region in data["results"]["records"]["fields"]["libelle_region"]:
+TypeError: list indices must be integers or slices, not str
+[2026-04-08T10:50:59.982+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=energie_meteo_dag, task_id=collecter_production_electrique, execution_date=20260408T105056, start_date=20260408T105059, end_date=20260408T105059
+[2026-04-08T10:50:59.996+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 24 for task collecter_production_electrique (list indices must be integers or slices, not str; 333)
+[2026-04-08T10:51:00.013+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2026-04-08T10:51:00.049+0000] {taskinstance.py:3281} INFO - 0 downstream tasks scheduled from follow-on schedule check

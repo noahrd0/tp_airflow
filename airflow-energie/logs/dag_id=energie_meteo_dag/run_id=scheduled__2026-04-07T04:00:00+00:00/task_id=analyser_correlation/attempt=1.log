@@ -1,0 +1,13 @@
+[2026-04-08T10:40:41.480+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: energie_meteo_dag.analyser_correlation scheduled__2026-04-07T04:00:00+00:00 [queued]>
+[2026-04-08T10:40:41.487+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: energie_meteo_dag.analyser_correlation scheduled__2026-04-07T04:00:00+00:00 [queued]>
+[2026-04-08T10:40:41.487+0000] {taskinstance.py:2171} INFO - Starting attempt 1 of 3
+[2026-04-08T10:40:41.500+0000] {taskinstance.py:2192} INFO - Executing <Task(PythonOperator): analyser_correlation> on 2026-04-07 04:00:00+00:00
+[2026-04-08T10:40:41.509+0000] {standard_task_runner.py:60} INFO - Started process 146 to run task
+[2026-04-08T10:40:41.512+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'energie_meteo_dag', 'analyser_correlation', 'scheduled__2026-04-07T04:00:00+00:00', '--job-id', '11', '--raw', '--subdir', 'DAGS_FOLDER/energie_meteo.py', '--cfg-path', '/tmp/tmps0rbkzlo']
+[2026-04-08T10:40:41.516+0000] {standard_task_runner.py:88} INFO - Job 11: Subtask analyser_correlation
+[2026-04-08T10:40:41.554+0000] {task_command.py:423} INFO - Running <TaskInstance: energie_meteo_dag.analyser_correlation scheduled__2026-04-07T04:00:00+00:00 [running]> on host 2b261882dd28
+[2026-04-08T10:40:41.624+0000] {taskinstance.py:2481} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='rte-data-team' AIRFLOW_CTX_DAG_ID='energie_meteo_dag' AIRFLOW_CTX_TASK_ID='analyser_correlation' AIRFLOW_CTX_EXECUTION_DATE='2026-04-07T04:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-04-07T04:00:00+00:00'
+[2026-04-08T10:40:41.626+0000] {python.py:201} INFO - Done. Returned value was: None
+[2026-04-08T10:40:41.636+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=energie_meteo_dag, task_id=analyser_correlation, execution_date=20260407T040000, start_date=20260408T104041, end_date=20260408T104041
+[2026-04-08T10:40:41.690+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-04-08T10:40:41.739+0000] {taskinstance.py:3281} INFO - 1 downstream tasks scheduled from follow-on schedule check
