@@ -1,5 +1,6 @@
 from airflow import DAG
 from airflow.operators.python import PythonOperator
+from airflow.decorators import task
 from datetime import datetime, timedelta
 import pendulum
 import requests
@@ -203,6 +204,8 @@ def generer_rapport_energie(**context):
     Sauvegarde le rapport dans /tmp/rapport_energie_<YYYY-MM-DD>.json.
     Retourne le chemin du fichier généré (stocké dans XCom).
     """
+    import time
+    time.sleep(5)
     ti = context["ti"]
     analyse = ti.xcom_pull(task_ids="analyser_correlation")
     today = date.today().isoformat()
@@ -242,6 +245,12 @@ def generer_rapport_energie(**context):
     logging.info(f"Rapport sauvegarde : {chemin}")
     return chemin
 
+def sla_miss_callback(dag, task_list, blocking_task_list, slas, blocking_tis):
+	logging.warning(
+		"[SLA MISS] Les tâches suivantes ont dépassé leur SLA : %s",
+		[t.task_id for t in blocking_tis]
+	)
+
 # --- Définition du DAG ---
 with DAG(
 	dag_id="energie_meteo_dag",
@@ -251,26 +260,28 @@ with DAG(
 	start_date=datetime(2024, 1, 1, tzinfo=local_tz),
 	catchup=False,
 	tags=["rte", "energie", "meteo", "open-data"],
+	sla_miss_callback=sla_miss_callback,
 ) as dag:
 	t1 = PythonOperator(
-	task_id="verifier_apis",
-	python_callable=verifier_apis,
+		task_id="verifier_apis",
+		python_callable=verifier_apis,
 	)
 	t2 = PythonOperator(
-	task_id="collecter_meteo_regions",
-	python_callable=collecter_meteo_regions,
+		task_id="collecter_meteo_regions",
+		python_callable=collecter_meteo_regions,
 	)
 	t3 = PythonOperator(
-	task_id="collecter_production_electrique",
-	python_callable=collecter_production_electrique,
+		task_id="collecter_production_electrique",
+		python_callable=collecter_production_electrique,
 	)
 	t4 = PythonOperator(
-	task_id="analyser_correlation",
-	python_callable=analyser_correlation,
+		task_id="analyser_correlation",
+		python_callable=analyser_correlation,
 	)
 	t5 = PythonOperator(
-	task_id="generer_rapport_energie",
-	python_callable=generer_rapport_energie,
+		task_id="generer_rapport_energie",
+		python_callable=generer_rapport_energie,
+		sla=timedelta(seconds=1)
 	)
 
 	t1 >> [t2, t3] >> t4 >> t5

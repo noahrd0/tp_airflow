@@ -1,0 +1,14 @@
+[2026-04-09T11:35:03.801+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: exercice_jour2.pair scheduled__2026-04-09T11:30:00+00:00 [queued]>
+[2026-04-09T11:35:03.808+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: exercice_jour2.pair scheduled__2026-04-09T11:30:00+00:00 [queued]>
+[2026-04-09T11:35:03.809+0000] {taskinstance.py:2171} INFO - Starting attempt 1 of 1
+[2026-04-09T11:35:03.817+0000] {taskinstance.py:2192} INFO - Executing <Task(PythonOperator): pair> on 2026-04-09 11:30:00+00:00
+[2026-04-09T11:35:03.823+0000] {standard_task_runner.py:60} INFO - Started process 1566 to run task
+[2026-04-09T11:35:03.826+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'exercice_jour2', 'pair', 'scheduled__2026-04-09T11:30:00+00:00', '--job-id', '103', '--raw', '--subdir', 'DAGS_FOLDER/random_number.py', '--cfg-path', '/tmp/tmpubyp55dx']
+[2026-04-09T11:35:03.828+0000] {standard_task_runner.py:88} INFO - Job 103: Subtask pair
+[2026-04-09T11:35:03.857+0000] {task_command.py:423} INFO - Running <TaskInstance: exercice_jour2.pair scheduled__2026-04-09T11:30:00+00:00 [running]> on host d5ed6e53f0d8
+[2026-04-09T11:35:03.907+0000] {taskinstance.py:2481} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='exercice_jour2' AIRFLOW_CTX_TASK_ID='pair' AIRFLOW_CTX_EXECUTION_DATE='2026-04-09T11:30:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-04-09T11:30:00+00:00'
+[2026-04-09T11:35:03.914+0000] {logging_mixin.py:188} INFO - Le nombre 90 est pair
+[2026-04-09T11:35:03.914+0000] {python.py:201} INFO - Done. Returned value was: None
+[2026-04-09T11:35:03.920+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=exercice_jour2, task_id=pair, execution_date=20260409T113000, start_date=20260409T113503, end_date=20260409T113503
+[2026-04-09T11:35:03.957+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-04-09T11:35:03.972+0000] {taskinstance.py:3281} INFO - 0 downstream tasks scheduled from follow-on schedule check

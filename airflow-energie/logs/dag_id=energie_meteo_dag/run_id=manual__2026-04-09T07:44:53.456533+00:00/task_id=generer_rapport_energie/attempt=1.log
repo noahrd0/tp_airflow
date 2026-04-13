@@ -1,0 +1,26 @@
+[2026-04-09T07:45:00.901+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: energie_meteo_dag.generer_rapport_energie manual__2026-04-09T07:44:53.456533+00:00 [queued]>
+[2026-04-09T07:45:00.906+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: energie_meteo_dag.generer_rapport_energie manual__2026-04-09T07:44:53.456533+00:00 [queued]>
+[2026-04-09T07:45:00.907+0000] {taskinstance.py:2171} INFO - Starting attempt 1 of 3
+[2026-04-09T07:45:00.914+0000] {taskinstance.py:2192} INFO - Executing <Task(PythonOperator): generer_rapport_energie> on 2026-04-09 07:44:53.456533+00:00
+[2026-04-09T07:45:00.921+0000] {standard_task_runner.py:60} INFO - Started process 4083 to run task
+[2026-04-09T07:45:00.923+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'energie_meteo_dag', 'generer_rapport_energie', 'manual__2026-04-09T07:44:53.456533+00:00', '--job-id', '84', '--raw', '--subdir', 'DAGS_FOLDER/energie_meteo.py', '--cfg-path', '/tmp/tmpwmynq63m']
+[2026-04-09T07:45:00.925+0000] {standard_task_runner.py:88} INFO - Job 84: Subtask generer_rapport_energie
+[2026-04-09T07:45:00.955+0000] {task_command.py:423} INFO - Running <TaskInstance: energie_meteo_dag.generer_rapport_energie manual__2026-04-09T07:44:53.456533+00:00 [running]> on host 1ac10858d911
+[2026-04-09T07:45:01.005+0000] {taskinstance.py:2481} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='rte-data-team' AIRFLOW_CTX_DAG_ID='energie_meteo_dag' AIRFLOW_CTX_TASK_ID='generer_rapport_energie' AIRFLOW_CTX_EXECUTION_DATE='2026-04-09T07:44:53.456533+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-04-09T07:44:53.456533+00:00'
+[2026-04-09T07:45:06.022+0000] {logging_mixin.py:188} INFO - 
+================================================================================
+[2026-04-09T07:45:06.023+0000] {logging_mixin.py:188} INFO -  RAPPORT ENERGIE & METEO — RTE — 2026-04-09
+[2026-04-09T07:45:06.023+0000] {logging_mixin.py:188} INFO - ================================================================================
+[2026-04-09T07:45:06.024+0000] {logging_mixin.py:188} INFO - Region                    Soleil (h)  Vent (km/h)  Solaire (MW)  Eolien (MW)   Statut
+[2026-04-09T07:45:06.024+0000] {logging_mixin.py:188} INFO - --------------------------------------------------------------------------------
+[2026-04-09T07:45:06.024+0000] {logging_mixin.py:188} INFO - Île-de-France                   11.5         18.6             0            0   ALERTE
+[2026-04-09T07:45:06.024+0000] {logging_mixin.py:188} INFO - Occitanie                       12.2         14.2             0            0   ALERTE
+[2026-04-09T07:45:06.025+0000] {logging_mixin.py:188} INFO - Nouvelle-Aquitaine              12.5         15.8             0            0   ALERTE
+[2026-04-09T07:45:06.025+0000] {logging_mixin.py:188} INFO - Auvergne-Rhône-Alpes            12.7         11.6             0            0   ALERTE
+[2026-04-09T07:45:06.025+0000] {logging_mixin.py:188} INFO - Hauts-de-France                 11.4         20.5             0            0   ALERTE
+[2026-04-09T07:45:06.025+0000] {logging_mixin.py:188} INFO - ================================================================================
+[2026-04-09T07:45:06.027+0000] {energie_meteo.py:245} INFO - Rapport sauvegarde : /tmp/rapports/rapport_energie_2026-04-09.json
+[2026-04-09T07:45:06.028+0000] {python.py:201} INFO - Done. Returned value was: /tmp/rapports/rapport_energie_2026-04-09.json
+[2026-04-09T07:45:06.054+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=energie_meteo_dag, task_id=generer_rapport_energie, execution_date=20260409T074453, start_date=20260409T074500, end_date=20260409T074506
+[2026-04-09T07:45:06.105+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-04-09T07:45:06.156+0000] {taskinstance.py:3281} INFO - 0 downstream tasks scheduled from follow-on schedule check

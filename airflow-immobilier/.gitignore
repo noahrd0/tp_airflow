@@ -1,0 +1,15 @@
+airflow_env/
+__pycache__/
+*.pyc
+*.pyo
+.env
+logs/
+/tmp/*.log
+/tmp/*.txt
+postgres-db-volume/
+hadoop_namenode/
+hadoop_datanode/
+*.cfg
+*.db
+.DS_Store
+data/dvf_2023.csv

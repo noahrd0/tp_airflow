@@ -1,0 +1,1902 @@
+[2026-04-09T07:33:33.291+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: energie_meteo_dag.generer_rapport_energie manual__2026-04-09T07:33:22.872818+00:00 [queued]>
+[2026-04-09T07:33:33.296+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: energie_meteo_dag.generer_rapport_energie manual__2026-04-09T07:33:22.872818+00:00 [queued]>
+[2026-04-09T07:33:33.296+0000] {taskinstance.py:2171} INFO - Starting attempt 1 of 3
+[2026-04-09T07:33:33.304+0000] {taskinstance.py:2192} INFO - Executing <Task(PythonOperator): generer_rapport_energie> on 2026-04-09 07:33:22.872818+00:00
+[2026-04-09T07:33:33.310+0000] {standard_task_runner.py:60} INFO - Started process 3868 to run task
+[2026-04-09T07:33:33.312+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'energie_meteo_dag', 'generer_rapport_energie', 'manual__2026-04-09T07:33:22.872818+00:00', '--job-id', '68', '--raw', '--subdir', 'DAGS_FOLDER/energie_meteo.py', '--cfg-path', '/tmp/tmp5n0pxqig']
+[2026-04-09T07:33:33.314+0000] {standard_task_runner.py:88} INFO - Job 68: Subtask generer_rapport_energie
+[2026-04-09T07:33:33.343+0000] {task_command.py:423} INFO - Running <TaskInstance: energie_meteo_dag.generer_rapport_energie manual__2026-04-09T07:33:22.872818+00:00 [running]> on host 1ac10858d911
+[2026-04-09T07:33:33.392+0000] {taskinstance.py:2481} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='rte-data-team' AIRFLOW_CTX_DAG_ID='energie_meteo_dag' AIRFLOW_CTX_TASK_ID='generer_rapport_energie' AIRFLOW_CTX_EXECUTION_DATE='2026-04-09T07:33:22.872818+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-04-09T07:33:22.872818+00:00'
+[2026-04-09T07:33:33.395+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/context.py:315: AirflowContextDeprecationWarning: Accessing 'execution_date' from the template is deprecated and will be removed in a future version. Please use 'data_interval_start' or 'logical_date' instead.
+  warnings.warn(_create_deprecation_warning(k, replacements))
+
+[2026-04-09T07:33:33.395+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/context.py:315: AirflowContextDeprecationWarning: Accessing 'next_ds' from the template is deprecated and will be removed in a future version. Please use '{{ data_interval_end | ds }}' instead.
+  warnings.warn(_create_deprecation_warning(k, replacements))
+
+[2026-04-09T07:33:33.395+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/context.py:315: AirflowContextDeprecationWarning: Accessing 'next_ds_nodash' from the template is deprecated and will be removed in a future version. Please use '{{ data_interval_end | ds_nodash }}' instead.
+  warnings.warn(_create_deprecation_warning(k, replacements))
+
+[2026-04-09T07:33:33.395+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/context.py:315: AirflowContextDeprecationWarning: Accessing 'next_execution_date' from the template is deprecated and will be removed in a future version. Please use 'data_interval_end' instead.
+  warnings.warn(_create_deprecation_warning(k, replacements))
+
+[2026-04-09T07:33:33.396+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/context.py:315: AirflowContextDeprecationWarning: Accessing 'prev_ds' from the template is deprecated and will be removed in a future version.
+  warnings.warn(_create_deprecation_warning(k, replacements))
+
+[2026-04-09T07:33:33.396+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/context.py:315: AirflowContextDeprecationWarning: Accessing 'prev_ds_nodash' from the template is deprecated and will be removed in a future version.
+  warnings.warn(_create_deprecation_warning(k, replacements))
+
+[2026-04-09T07:33:33.396+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/context.py:315: AirflowContextDeprecationWarning: Accessing 'prev_execution_date' from the template is deprecated and will be removed in a future version.
+  warnings.warn(_create_deprecation_warning(k, replacements))
+
+[2026-04-09T07:33:33.396+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/context.py:315: AirflowContextDeprecationWarning: Accessing 'prev_execution_date_success' from the template is deprecated and will be removed in a future version. Please use 'prev_data_interval_start_success' instead.
+  warnings.warn(_create_deprecation_warning(k, replacements))
+
+[2026-04-09T07:33:33.429+0000] {taskinstance.py:2699} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/decorators/base.py", line 367, in __call__
+    op = self.operator_class(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/baseoperator.py", line 445, in apply_defaults
+    self.set_xcomargs_dependencies()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/baseoperator.py", line 1166, in set_xcomargs_dependencies
+    XComArg.apply_upstream_relationship(self, arg)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 128, in apply_upstream_relationship
+    for operator, _ in XComArg.iter_xcom_references(arg):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 118, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(getattr(arg, attr))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 115, in iter_xcom_references
+    yield from XComArg.iter_xcom_references(elem)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom_arg.py", line 116, in iter_xcom_references
+    elif isinstance(arg, AbstractOperator):
+  File "/usr/local/lib/python3.8/abc.py", line 98, in __instancecheck__
+    return _abc_instancecheck(cls, instance)
+  File "/usr/local/lib/python3.8/abc.py", line 102, in __subclasscheck__
+    return _abc_subclasscheck(cls, subclass)
+RecursionError: maximum recursion depth exceeded in comparison
+[2026-04-09T07:33:33.444+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=energie_meteo_dag, task_id=generer_rapport_energie, execution_date=20260409T073322, start_date=20260409T073333, end_date=20260409T073333
+[2026-04-09T07:33:33.451+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 68 for task generer_rapport_energie (maximum recursion depth exceeded in comparison; 3868)
+[2026-04-09T07:33:33.484+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2026-04-09T07:33:33.514+0000] {taskinstance.py:3281} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,68 @@
+{
+  "date": "2026-04-09",
+  "source": "RTE eCO2mix + Open-Meteo",
+  "pipeline": "energie_meteo_dag",
+  "regions": {
+    "Île-de-France": {
+      "alertes": [
+        "ALERTE SOLAIRE : 11.5h de soleil mais seulement 0 MW produits"
+      ],
+      "ensoleillement_h": 11.509616666666668,
+      "vent_kmh": 18.6,
+      "solaire_mw": 0.0,
+      "eolien_mw": 0.0,
+      "statut": "ALERTE"
+    },
+    "Occitanie": {
+      "alertes": [
+        "ALERTE SOLAIRE : 12.2h de soleil mais seulement 0 MW produits"
+      ],
+      "ensoleillement_h": 12.242666666666667,
+      "vent_kmh": 14.2,
+      "solaire_mw": 0.0,
+      "eolien_mw": 0.0,
+      "statut": "ALERTE"
+    },
+    "Nouvelle-Aquitaine": {
+      "alertes": [
+        "ALERTE SOLAIRE : 12.5h de soleil mais seulement 0 MW produits"
+      ],
+      "ensoleillement_h": 12.464286111111111,
+      "vent_kmh": 15.8,
+      "solaire_mw": 0.0,
+      "eolien_mw": 0.0,
+      "statut": "ALERTE"
+    },
+    "Auvergne-Rhône-Alpes": {
+      "alertes": [
+        "ALERTE SOLAIRE : 12.7h de soleil mais seulement 0 MW produits"
+      ],
+      "ensoleillement_h": 12.720849999999999,
+      "vent_kmh": 11.6,
+      "solaire_mw": 0.0,
+      "eolien_mw": 0.0,
+      "statut": "ALERTE"
+    },
+    "Hauts-de-France": {
+      "alertes": [
+        "ALERTE SOLAIRE : 11.4h de soleil mais seulement 0 MW produits"
+      ],
+      "ensoleillement_h": 11.361605555555554,
+      "vent_kmh": 20.5,
+      "solaire_mw": 0.0,
+      "eolien_mw": 0.0,
+      "statut": "ALERTE"
+    }
+  },
+  "resume": {
+    "nb_regions_analysees": 5,
+    "nb_alertes": 5,
+    "regions_en_alerte": [
+      "Île-de-France",
+      "Occitanie",
+      "Nouvelle-Aquitaine",
+      "Auvergne-Rhône-Alpes",
+      "Hauts-de-France"
+    ]
+  }
+}

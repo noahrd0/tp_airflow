@@ -1,0 +1,18 @@
+[2026-04-09T07:40:25.114+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: energie_meteo_dag.collecter_meteo_regions manual__2026-04-09T07:40:21.296346+00:00 [queued]>
+[2026-04-09T07:40:25.124+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: energie_meteo_dag.collecter_meteo_regions manual__2026-04-09T07:40:21.296346+00:00 [queued]>
+[2026-04-09T07:40:25.124+0000] {taskinstance.py:2171} INFO - Starting attempt 1 of 3
+[2026-04-09T07:40:25.136+0000] {taskinstance.py:2192} INFO - Executing <Task(PythonOperator): collecter_meteo_regions> on 2026-04-09 07:40:21.296346+00:00
+[2026-04-09T07:40:25.143+0000] {standard_task_runner.py:60} INFO - Started process 3997 to run task
+[2026-04-09T07:40:25.145+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'energie_meteo_dag', 'collecter_meteo_regions', 'manual__2026-04-09T07:40:21.296346+00:00', '--job-id', '77', '--raw', '--subdir', 'DAGS_FOLDER/energie_meteo.py', '--cfg-path', '/tmp/tmpkmii536b']
+[2026-04-09T07:40:25.148+0000] {standard_task_runner.py:88} INFO - Job 77: Subtask collecter_meteo_regions
+[2026-04-09T07:40:25.194+0000] {task_command.py:423} INFO - Running <TaskInstance: energie_meteo_dag.collecter_meteo_regions manual__2026-04-09T07:40:21.296346+00:00 [running]> on host 1ac10858d911
+[2026-04-09T07:40:25.266+0000] {taskinstance.py:2481} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='rte-data-team' AIRFLOW_CTX_DAG_ID='energie_meteo_dag' AIRFLOW_CTX_TASK_ID='collecter_meteo_regions' AIRFLOW_CTX_EXECUTION_DATE='2026-04-09T07:40:21.296346+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-04-09T07:40:21.296346+00:00'
+[2026-04-09T07:40:25.480+0000] {energie_meteo.py:96} INFO - Île-de-France - Ensoleillement: 11.51 h, Vent max: 18.60 km/h
+[2026-04-09T07:40:25.692+0000] {energie_meteo.py:96} INFO - Occitanie - Ensoleillement: 12.24 h, Vent max: 14.20 km/h
+[2026-04-09T07:40:25.888+0000] {energie_meteo.py:96} INFO - Nouvelle-Aquitaine - Ensoleillement: 12.46 h, Vent max: 15.80 km/h
+[2026-04-09T07:40:26.097+0000] {energie_meteo.py:96} INFO - Auvergne-Rhône-Alpes - Ensoleillement: 12.72 h, Vent max: 11.60 km/h
+[2026-04-09T07:40:26.298+0000] {energie_meteo.py:96} INFO - Hauts-de-France - Ensoleillement: 10.64 h, Vent max: 19.10 km/h
+[2026-04-09T07:40:26.300+0000] {python.py:201} INFO - Done. Returned value was: {'Île-de-France': {'ensoleillement_h': 11.509616666666668, 'vent_kmh': 18.6}, 'Occitanie': {'ensoleillement_h': 12.242666666666667, 'vent_kmh': 14.2}, 'Nouvelle-Aquitaine': {'ensoleillement_h': 12.464286111111111, 'vent_kmh': 15.8}, 'Auvergne-Rhône-Alpes': {'ensoleillement_h': 12.720849999999999, 'vent_kmh': 11.6}, 'Hauts-de-France': {'ensoleillement_h': 10.638847222222221, 'vent_kmh': 19.1}}
+[2026-04-09T07:40:26.318+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=energie_meteo_dag, task_id=collecter_meteo_regions, execution_date=20260409T074021, start_date=20260409T074025, end_date=20260409T074026
+[2026-04-09T07:40:26.361+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-04-09T07:40:26.396+0000] {taskinstance.py:3281} INFO - 1 downstream tasks scheduled from follow-on schedule check
